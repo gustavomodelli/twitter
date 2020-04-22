@@ -1,0 +1,33 @@
+library(tidyverse)
+library(twitteR)
+
+##Gustavo Credentials
+setup_twitter_oauth(consumer_key = "A2S2bnVtECCB78ryTrkuyqAR1",
+                    consumer_secret = "OvtSqAqdDrB2mMIz7Yzfg2bDVqXBeJqT53wGlfz63Y8GBQ5xAA",
+                    access_token = '922621292557340672-JVU4DKyBDzPYiEtdsdREWKn1EcBXdWd',
+                    access_secret = 'vhjlpyrBYM1oLJ6zAilbMAhIXZwSQdLGlJjMhPJ45DKaT')
+
+##Search on twitter
+ets <- searchTwitter('#rstats',n=50)
+
+##Convertion to dataframes
+df <- twListToDF(ets)
+
+
+##Another examples
+bz <- searchTwitter('#bolsonaro', n = 100)
+
+bz <- twListToDF(bz)
+
+
+##Quarentine
+qua <- searchTwitter('#quarentena', n = 100)
+qua <- twListToDF(qua)
+
+##Get Trends
+avil_trends <- availableTrendLocations()
+head(avil_trends, 40)
+
+avil_trends %>% filter(country == 'Brazil')
+
+
