@@ -1,0 +1,31 @@
+library(rtweet)
+
+## quick overview of rtweet functions
+vignette("auth", package = "rtweet")
+
+#Autentication
+token <- create_token(
+  consumer_key = "A2S2bnVtECCB78ryTrkuyqAR1",
+  consumer_secret = "OvtSqAqdDrB2mMIz7Yzfg2bDVqXBeJqT53wGlfz63Y8GBQ5xAA",
+  access_token = '922621292557340672-JVU4DKyBDzPYiEtdsdREWKn1EcBXdWd',
+  access_secret = 'vhjlpyrBYM1oLJ6zAilbMAhIXZwSQdLGlJjMhPJ45DKaT'
+)
+
+get_token()
+
+##Overview
+## quick overview of rtweet functions
+vignette("intro", package = "rtweet")
+
+rt <- search_tweets(
+  "#rstats", n = 1000, include_rts = FALSE
+)
+
+##Plot in time series
+ts_plot(rt)
+
+quarentena <- search_tweets(
+  '#quarentena', n = 1000
+)
+
+
